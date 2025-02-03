@@ -25,8 +25,8 @@ public class App {
 
         // Remove this and replace with your implementation
         // using the HelloThere class.
-        HelloThere another = new HelloThere();
-        System.out.println(another.hello(name));
+        HelloThere hellothere = new HelloThere();
+        System.out.println(hellothere.hello(name));
     }
 
     /**
@@ -37,20 +37,35 @@ public class App {
         int hours = input.nextInt();
         int minutes = input.nextInt();
         int seconds = input.nextInt();
-        Time another1 = new Time();
-        System.out.println(another1.toSeconds(hours, minutes, seconds));
-        // HelloThere another = new HelloThere();
-        // System.out.println(another.hello(name));
+        Time time = new Time();
+        // System.out.println(time.toSeconds(hours, minutes, seconds));
+        System.out.println("In only seconds that is: "+ time.toSeconds(hours, minutes, seconds));
     }
     /**
      * Solution for the third task.
      */
-    public void imInaBand() {}
+    public void imInaBand() {
+        Album album = new Album();
+        album.setArtist("Pink Floyd");
+        album.setName("Wish You Were Here");
+        album.setYear(1976);
+        System.out.println(album.getName() + " was released in " + album.getYear() + " by " + album.getArtist());
+    }
 
     /**
      * Solution for the fourth task.
      */
-    public void bestAlbumsEver() {}
+    public void bestAlbumsEver() {
+        AlbumGenerator albumGenerator = new AlbumGenerator();
+        albumGenerator.generateAlbums();
+        for (int i = 0; i < albumGenerator.generateAlbums().length; i++) {
+            // System.out.println(albumGenerator()[i].getArtist() + " ");
+            System.out.println(albumGenerator.generateAlbums()[i].getName() + " was released in " + albumGenerator.generateAlbums()[i].getYear()+ " by " + albumGenerator.generateAlbums()[i].getArtist());
+        }
+    }
+        // AlbumGenerator albumGenerator = new AlbumGenerator();
+        // AlbumGenerator.main(albumGenerator);
+        //albumGenerator.generateAlbums();
 
     /**
      * Solution for the fifth task.
@@ -72,16 +87,16 @@ public class App {
         App app = new App(consoleInput);
 
         // Task 1
-        app.helloThere();
+        // app.helloThere();
 
         // Task 2
-        //app.seconds();
+        // app.seconds();
 
         // Task 3
-        //app.imInaBand();
+        // app.imInaBand();
 
         // Task 4
-        //app.bestAlbumsEver();
+        app.bestAlbumsEver();
 
         // Task 5
         //app.workingWithArrays();
